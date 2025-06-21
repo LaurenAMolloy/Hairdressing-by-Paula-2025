@@ -25,11 +25,18 @@ const testimonials = [
         name: 'Mona, Trefriw',
         text: 'Paula has been doing my hair for years. I trust her 100%. She is great at giving advice on how to look after your hair and very nice and polite. I wouldn not have anyone else!',
     },
-    {   
+    {
         name: 'J, Conwy',
         text: 'I can not speak highly enough of Paula. It is so convinient when she comes to my house to do mine and my sisters hair. She manages to keep our thick curls under control somehow and we have a chance for a gossip and a catch up at the same time. What more could we ask for?',
     },
-     
+    {
+      name: 'Jo, Leicester',
+      text: 'Absolutely amazing hairdresser. Lovely lady who did a fantastic job on my wedding hair in April 2025. Thank you so much Paula. Xx I would highly recommend.'
+    },
+    {
+    name: 'Katie Malpas',
+    text: 'Had my hair done today by Paula and absolutely love it, she is amazing!! Helped me decide how I wanted it and just a lovely person if I could give higher than 5* I would x',
+    },
 ]
 
 
@@ -41,12 +48,12 @@ navToggle.addEventListener('click', () => {
 const appearOptions = {
     threshold: .25,
     rootMargin: "0px 0px -50px 0px"
-    
+
 };
 
 const appearOnScroll = new IntersectionObserver
 (function(
-    entries, 
+    entries,
     appearOnScroll
     ){
         entries.forEach(entry => {
@@ -72,7 +79,6 @@ function updateTestimonials() {
 
     userName.innerHTML = name
     testimonial.innerHTML = text
-   
 
     idx++
 
