@@ -8,9 +8,21 @@ const userName = document. querySelector('.username');
 
 const modal = document.querySelector('.modal');
 const modalX = document.querySelector(".modal-x");
+const modalOverlay = document.querySelector('.modal-overlay')
 
 //Remove modal on click for x button or modal container
+// modalX.addEventListener('click', function() {
+//   modal.add.classList('hide');
+//   modal.add.classList('hide')
+// })
 
+modalOverlay.addEventListener('click', function(e){
+  //console.log(e.target)
+  //console.log(e.currentTarget)
+  console.log('hiding modal');
+  modalOverlay.classList.add('hide');
+  modal.classList.add('hide');
+});
 
 
 //create an array of objects to populate the review section
