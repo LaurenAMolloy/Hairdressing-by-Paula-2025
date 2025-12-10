@@ -189,6 +189,45 @@ footer a {
   color: white
 }
 
+.modal {
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  border: 2px solid #db00b0;
+  max-width: 50%;
+  height: 200px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.modal-overlay {
+  background-color: #ccc;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  opacity: 0.75;
+}
+
+.modal-x {
+  border-radius: 100%;
+  padding: .5rem;
+  background-color: #db00b0;
+  border: none;
+  color: white;
+}
+
+.modal-x-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 /*------------- Mobile Styles Homepage --------------*/
 /*--- Nav Section ---*/
 
@@ -804,7 +843,7 @@ img {
     align-items: flex-start;
     flex-flow: row wrap;
   }
-  
+
    .gallery-image-2 {
     display: flex;
     flex-basis: 45%;

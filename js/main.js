@@ -6,6 +6,13 @@ const testimonialsContainer = document.querySelector('.testimonial-container');
 const testimonial = document.querySelector('.testimonial');
 const userName = document. querySelector('.username');
 
+const modal = document.querySelector('.modal');
+const modalX = document.querySelector(".modal-x");
+
+//Remove modal on click for x button or modal container
+
+
+
 //create an array of objects to populate the review section
 const testimonials = [
     {
