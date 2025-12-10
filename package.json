@@ -15,5 +15,8 @@
   "devDependencies": {
     "@parcel/transformer-webmanifest": "^2.13.3",
     "parcel": "^2.13.3"
+  },
+  "dependencies": {
+    "particles.js": "^2.0.0"
   }
 }
