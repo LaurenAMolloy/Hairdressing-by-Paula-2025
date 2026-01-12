@@ -143,6 +143,15 @@ figure {
   position: relative;
 }
 
+.privacy-content-wrapper {
+  width: 90%;
+  /*--border: 2px dotted red;--*/
+  margin: 0 auto;
+  max-width: 1100px;
+  /* added for nav-toggle positioning */
+  position: relative;
+}
+
 /*------------- Base Header - Footer Styles --------------*/
 header {
   text-align: center;

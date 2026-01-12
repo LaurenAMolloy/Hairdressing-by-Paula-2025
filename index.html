@@ -6,6 +6,67 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hairdressing by Paula Lorraine</title>
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+  <script src="/cookie-banner/silktide-consent-manager.js"></script>
+  <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: true
+      },
+      cookieIcon: {
+        position: "bottomLeft"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: true,
+          onAccept: function () {
+            console.log('Add logic for the required Necessary here');
+          }
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: true,
+          onAccept: function () {
+            console.log('Add logic for the required Analytics here');
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+          required: false,
+          onAccept: function () {
+            console.log('Add accept logic for Advertising');
+          },
+          onReject: function () {
+            console.log('Add reject logic for Advertising');
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+          acceptAllButtonText: "Accept all",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject non-essential",
+          rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      }
+    });
+  </script>
   <link rel="stylesheet" href="css/main.css">
   <meta name="description" content="">
 
@@ -20,6 +81,7 @@
 
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +93,11 @@
 
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/6d728b4370.js" crossorigin="anonymous"></script>
-  <script src="
+  <!-- <script src="
   https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js
-  "></script>
+  "></script> -->
   <!--<script src="/js/particles.js" defer></script> -->
+  <script src="/js/main.js" defer></script>
 </head>
 
 
@@ -337,21 +400,12 @@
     <div class="copyright">
       <p> &copy; <span id="copyright-year"> 2023</span> | Hairdressing by Paula Lorraine</p>
       <p>Made with ❤ by <a href="https://www.linkedin.com/in/lauren-m-a9b63252/"> Lauren M</a></p>
-      <a href="https://www.iubenda.com/privacy-policy/91199348"
-        class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy
-        Policy</a>
-      <a href="https://www.iubenda.com/privacy-policy/91199348/cookie-policy"
-        class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a>
-      <script
-        type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
-      <script
-        type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookies/">Cookie Policy</a>
     </div>
-
   </footer>
   <script src="../js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="../js/plugins.js"></script>
-  <script src="../js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <!-- <script>
