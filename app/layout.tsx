@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Montserrat, Pacifico, Platypi } from "next/font/google";
+import { Dancing_Script, Montserrat, Pacifico, Platypi, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
@@ -38,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dancingScript.variable} ${montserrat.variable} ${pacifico.variable} ${platypi.variable}`}
+      className={cn(dancingScript.variable, montserrat.variable, pacifico.variable, platypi.variable, "font-sans", geist.variable)}
     >
       <body>{children}</body>
     </html>
