@@ -1,6 +1,20 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-# Useful .gitignore templates: https://github.com/github/gitignore
+# Dependencies
 node_modules
+
+# Build outputs
 dist
 .parcel-cache
+.next
+out
+build
+
+# Next.js
+next-env.d.ts
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.DS_Store
