@@ -25,6 +25,8 @@ Use ShadCN for UI **patterns** (interactive, reusable, accessibility-sensitive).
 | "See You Soon" marquee | ❌ Custom CSS | — | Pure CSS animation, nothing in ShadCN for this |
 | Fade-in image wrapper | ❌ Custom | — | Custom `IntersectionObserver` hook |
 | Footer | ❌ Custom Tailwind | — | Branded layout, no interactivity |
+| Before & After gallery | ❌ `react-compare-slider` | — | Drag-to-reveal is more impactful than ShadCN Carousel for transformations |
+| Freshest Hair grid | ❌ CSS masonry | — | Pure CSS `columns` — no library needed, looks editorial |
 
 ---
 
@@ -33,7 +35,7 @@ Use ShadCN for UI **patterns** (interactive, reusable, accessibility-sensitive).
 | Vanilla JS file | Next.js route | Notes |
 |---|---|---|
 | `index.html` | `app/(public)/page.tsx` | Homepage — all sections below |
-| `gallery/index.html` | `app/(public)/gallery/page.tsx` | Gallery page — needs auditing (see below) |
+| `gallery/index.html` | `app/(public)/gallery/page.tsx` | Gallery page — **audited** ✅ see gallery section below |
 | `contact/index.html` | `app/(public)/contact/page.tsx` | Contact page — needs auditing (see below) |
 | `404.html` | `app/not-found.tsx` | Next.js built-in 404 handling |
 
@@ -286,6 +288,227 @@ Likely form fields: Name, Phone/Email, Message, Submit button. All accessible vi
 
 ---
 
+## 🖼️ Gallery Page — `app/(public)/gallery/page.tsx`
+
+> Audited from source ✅ — June 2026
+
+Two sections. No Swiper in the original — both upgraded for Phase 1.
+
+---
+
+### Section 1: Before & After — `components/gallery/BeforeAfterGallery.tsx` — `'use client'`
+
+**Original:** 7 before/after pairs in a plain image grid with "Before" / "After" captions.
+
+**Upgraded to:** `react-compare-slider` — a drag-to-reveal slider on each pair. Far more engaging for a hair salon, touch-friendly, and zero extra state management needed.
+
+**Install:**
+```bash
+npm install react-compare-slider
+```
+
+**All 7 pairs (from source):**
+
+| # | Before image | Before alt | After image | After alt |
+|---|---|---|---|---|
+| 1 | `/img/before-and-after/blonde-before-hair.jpg` | "mid blonde hair in need of styling" | `/img/before-and-after/blonde-after-hair.jpg` | "mid blonde hair styled and curled" |
+| 2 | `/img/before-and-after/blonde-bob-before.jpg` | "short blonde hair with dark roots" | `/img/before-and-after/short-blonde-after.jpg` | "short bobbed blonde hair freshly colored and styled" |
+| 3 | `/img/before-and-after/bronde-hair-before.jpg` | "mid length bronde straight hair needing a cut" | `/img/before-and-after/bronde-hair-after.jpg` | "mid length straight bronde hair freshly coloured and styled" |
+| 4 | `/img/extra-images/long-dark-before.jpg` | "long dark wavy hair" | `/img/extra-images/dark-bob-styled.jpg` | "short dark bobbed hair styled" |
+| 5 | `/img/before-and-after/extra-long-brown-before.jpg` | "very long frizzy hair" | `/img/before-and-after/extra-long-brown-after.jpg` | "very long curled hair" |
+| 6 | `/img/before-and-after/sleek-bob-before.jpg` | "long frizzy blonde hair" | `/img/before-and-after/sleek-bob-after.jpg` | "sleek bob" |
+| 7 | `/img/before-and-after/blonde-wavy-before.jpg` | "wet hair about to be cut" | `/img/before-and-after/blonder-wavy-after-2.jpg` | "blonde hair curled and styled" |
+
+**Component shape:**
+```tsx
+'use client'
+import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider'
+import type { GalleryPair } from '@/types'
+
+interface Props {
+  pairs: GalleryPair[]
+}
+
+export function BeforeAfterGallery({ pairs }: Props) {
+  return (
+    <section className="gallery-before-after">
+      <div className="content-wrapper">
+        <h1>View Our Latest Hair Transformations</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pairs.map((pair, i) => (
+            <div key={i} className="rounded-xl overflow-hidden">
+              <ReactCompareSlider
+                itemOne={<ReactCompareSliderImage src={pair.before.src} alt={pair.before.alt} />}
+                itemTwo={<ReactCompareSliderImage src={pair.after.src} alt={pair.after.alt} />}
+              />
+              <div className="flex justify-between text-sm px-2 pt-1 text-muted-foreground">
+                <span>Before</span>
+                <span>After</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+```
+
+**Add to `types/index.ts`:**
+```ts
+export interface GalleryPair {
+  before: { src: string; alt: string }
+  after: { src: string; alt: string }
+}
+```
+
+---
+
+### Section 2: Freshest Hair Designs — `components/gallery/FreshestHair.tsx` — Server Component
+
+**Original:** 16 images in a regular CSS grid.
+
+**Upgraded to:** CSS masonry layout using `columns` — a Pinterest-style staggered grid that suits portrait hair photography far better. No JS, no library, pure CSS.
+
+**All 16 images (from source):**
+
+| Image | Alt |
+|---|---|
+| `/img/extra-images/extra-long-brown-after-side.jpg` | "long brown hair from side view" |
+| `/img/extra-images/blonde_bridal_up.jpg` | "bridal hair style up with pearls" |
+| `/img/extra-images/blond_bod_side.jpg` | "short blonde hair side view" |
+| `/img/extra-images/blonde_bob_back.jpg` | "short blonde hair back view" |
+| `/img/extra-images/bridal-hair-up-spiral-curls.jpg` | "bridal hair style with blonde ringlet curls" |
+| `/img/extra-images/bronde-bob-side.jpg` | "side view of bronde bobbed hair" |
+| `/img/extra-images/bronde-bob.jpg` | "bronde bobbed hair" |
+| `/img/extra-images/dark-bob-back.jpg` | "dark bobbed hair from back" |
+| `/img/extra-images/dark-bob.jpg` | "dark bobbed hair" |
+| `/img/extra-images/brunette-curls.jpg` | "long brunette curly hair" |
+| `/img/extra-images/long-blonde-back.jpg` | "long blonde hair from the back" |
+| `/img/extra-images/long-blonde.jpg` | "long blonde hair" |
+| `/img/extra-images/red-bob.jpg` | "short red bob" |
+| `/img/extra-images/red-bob-back.jpg` | "short red bobbed hair from the back view" |
+| `/img/hair/lorraine-hair-side.jpg` | *(no alt in source — add: "hair styled by Paula Lorraine")* |
+| `/img/extra-images/short-dark-blonde.jpg` | *(no alt in source — add: "short dark blonde hair")* |
+
+**Component shape:**
+```tsx
+import Image from 'next/image'
+
+interface HairImage {
+  src: string
+  alt: string
+}
+
+interface Props {
+  images: HairImage[]
+}
+
+export function FreshestHair({ images }: Props) {
+  return (
+    <section className="gallery-freshest">
+      <div className="content-wrapper">
+        <h2>Browse Our Freshest Hair Designs</h2>
+        {/* CSS masonry via columns */}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+          {images.map((image, i) => (
+            <div key={i} className="break-inside-avoid mb-4 rounded-xl overflow-hidden">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={400}
+                height={500}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+```
+
+**Note:** `break-inside-avoid` is the key Tailwind class that prevents images splitting across columns. This is a Server Component — no `'use client'` needed.
+
+---
+
+### Gallery page composition — `app/(public)/gallery/page.tsx`
+
+```tsx
+import { BeforeAfterGallery } from '@/components/gallery/BeforeAfterGallery'
+import { FreshestHair } from '@/components/gallery/FreshestHair'
+import { beforeAfterPairs, freshestHairImages } from '@/lib/gallery-data'
+
+export default function GalleryPage() {
+  return (
+    <main>
+      <BeforeAfterGallery pairs={beforeAfterPairs} />
+      <FreshestHair images={freshestHairImages} />
+    </main>
+  )
+}
+```
+
+Keep the image data in `lib/gallery-data.ts` — a plain exported array. In Phase 2 this gets replaced by a DB query, so keeping it separate from the component makes the swap trivial.
+
+```ts
+// lib/gallery-data.ts
+import type { GalleryPair } from '@/types'
+
+export const beforeAfterPairs: GalleryPair[] = [
+  {
+    before: { src: '/img/before-and-after/blonde-before-hair.jpg', alt: 'mid blonde hair in need of styling' },
+    after: { src: '/img/before-and-after/blonde-after-hair.jpg', alt: 'mid blonde hair styled and curled' },
+  },
+  // ... remaining 6 pairs
+]
+
+export const freshestHairImages = [
+  { src: '/img/extra-images/extra-long-brown-after-side.jpg', alt: 'long brown hair from side view' },
+  // ... remaining 15 images
+]
+```
+
+**New images folder to add to `public/`:**
+```
+public/
+  img/
+    before-and-after/
+      blonde-before-hair.jpg
+      blonde-after-hair.jpg
+      blonde-bob-before.jpg
+      short-blonde-after.jpg
+      bronde-hair-before.jpg
+      bronde-hair-after.jpg
+      extra-long-brown-before.jpg
+      extra-long-brown-after.jpg
+      sleek-bob-before.jpg
+      sleek-bob-after.jpg
+      blonde-wavy-before.jpg
+      blonder-wavy-after-2.jpg
+    extra-images/
+      long-dark-before.jpg
+      dark-bob-styled.jpg
+      extra-long-brown-after-side.jpg
+      blonde_bridal_up.jpg        ← note: underscore filenames, keep as-is
+      blond_bod_side.jpg
+      blonde_bob_back.jpg
+      bridal-hair-up-spiral-curls.jpg
+      bronde-bob-side.jpg
+      bronde-bob.jpg
+      dark-bob-back.jpg
+      dark-bob.jpg
+      brunette-curls.jpg
+      long-blonde-back.jpg
+      long-blonde.jpg
+      red-bob.jpg
+      red-bob-back.jpg
+      short-dark-blonde.jpg
+```
+
+---
+
 ## 🎬 Animations (`fade-in-image`)
 
 ### `components/salon/FadeInImage.tsx` — `'use client'`, custom
@@ -351,6 +574,8 @@ public/
 ```
 
 Always use `<Image>` or `<FadeInImage>` — no raw `<img>` tags.
+
+> For the full gallery image list see the Gallery Page section above.
 
 ---
 
@@ -422,11 +647,12 @@ export default function HomePage() {
 
 ---
 
-## 📦 Full ShadCN Install List for Phase 1
+## 📦 Full Install List for Phase 1
 
 Run these once after Next.js project setup:
 
 ```bash
+# ShadCN
 npx shadcn@latest init
 npx shadcn@latest add sheet      # mobile nav drawer
 npx shadcn@latest add button     # CTA + form submit
@@ -434,6 +660,9 @@ npx shadcn@latest add carousel   # reviews/testimonials
 npx shadcn@latest add input      # contact form (pending audit)
 npx shadcn@latest add textarea   # contact form (pending audit)
 npx shadcn@latest add label      # contact form (pending audit)
+
+# Gallery
+npm install react-compare-slider  # before/after drag reveal
 ```
 
 ---
@@ -450,7 +679,10 @@ npx shadcn@latest add label      # contact form (pending audit)
 - [ ] `<Image>` or `<FadeInImage>` used everywhere — no raw `<img>` tags
 - [ ] No TypeScript errors (`npx tsc --noEmit`)
 - [ ] No ShadCN components used for branded layout sections (Hero, Services, WhoWeAre, Products, SampleWork)
-- [ ] Deployed to Vercel on a preview URL
+- [ ] Before/After drag-to-reveal slider works on desktop and mobile touch
+- [ ] Freshest Hair masonry grid displays correctly across breakpoints
+- [ ] All gallery images load without 404s
+- [ ] `break-inside-avoid` prevents images splitting across masonry columns
 - [ ] iubenda Privacy + Cookie Policy links work
 - [ ] Footer copyright year is dynamic
 
@@ -458,9 +690,6 @@ npx shadcn@latest add label      # contact form (pending audit)
 
 ## ⚠️ Still Needs Auditing
 
-These files weren't accessible during spec generation — clone the repo and review before building:
-
-- `gallery/index.html` — unknown structure, likely has a Swiper gallery → may need ShadCN `Carousel` or a dedicated Swiper React component
 - `contact/index.html` — unknown structure, likely a contact form → ShadCN form components confirmed above but fields TBC
 - `js/main.js` — contains mobile nav logic (replaced by Sheet), fade-in observer (replaced by FadeInImage), possibly review carousel logic (replaced by Carousel)
 - `css/main.css` — source of all colour tokens — extract these before starting Tailwind migration
@@ -470,15 +699,16 @@ These files weren't accessible during spec generation — clone the repo and rev
 ## 🌿 Git Branches for Phase 1
 
 ```
-phase-1/project-setup         ← Next.js init, shadcn init, globals.css, fonts, layout
-phase-1/header-footer         ← Header (Sheet) + Footer
-phase-1/homepage-sections     ← Hero through SeeYouSoon
-phase-1/reviews-carousel      ← ShadCN Carousel swap
-phase-1/gallery-page          ← gallery/index.html conversion (post-audit)
-phase-1/contact-page          ← contact/index.html + ShadCN form (post-audit)
-phase-1/animations            ← FadeInImage component, marquee CSS
-phase-1/images-optimisation   ← swap all <img> → <Image>/<FadeInImage>, rename files
-phase-1/vercel-preview        ← deploy + smoke test
+phase-1/project-setup              ← Next.js init, shadcn init, globals.css, fonts, layout
+phase-1/header-footer              ← Header (Sheet) + Footer
+phase-1/homepage-sections          ← Hero through SeeYouSoon
+phase-1/reviews-carousel           ← ShadCN Carousel swap
+phase-1/gallery-before-after       ← BeforeAfterGallery with react-compare-slider
+phase-1/gallery-freshest-hair      ← FreshestHair masonry grid
+phase-1/contact-page               ← contact/index.html + ShadCN form (post-audit)
+phase-1/animations                 ← FadeInImage component, marquee CSS
+phase-1/images-optimisation        ← swap all <img> → <Image>/<FadeInImage>, rename files
+phase-1/vercel-preview             ← deploy + smoke test
 ```
 
 ---

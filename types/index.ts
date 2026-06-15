@@ -4,3 +4,8 @@ export interface GalleryImage {
   category: "before-after" | "freshest-hair";
   uploadedAt: Date;
 }
+
+export interface GalleryPair {
+  before: { src: string; alt: string };
+  after: { src: string; alt: string };
+}
