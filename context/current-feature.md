@@ -1,23 +1,16 @@
-# Current Feature — phase-1/gallery-freshest-hair
+# Current Feature
 
 ## Status
 
-In Progress
+Not Started
 
 ## Goals
 
-- Create `components/gallery/FreshestHair.tsx` — Server Component, CSS masonry via Tailwind `columns`
-- Add all 16 images from spec with correct `src` and `alt` (already in `gallery-data.ts`)
-- Add `FreshestHair` to `app/(public)/gallery/page.tsx` below `BeforeAfterGallery`
-- Masonry renders correctly at mobile (2 cols), md (3 cols), lg (4 cols)
-- `break-inside-avoid` prevents images splitting across columns
-- No `'use client'` — pure Server Component
+<!-- Add goals here -->
 
 ## Notes
 
-- Image data (`freshestHairImages`) already exists in `lib/gallery-data.ts`
-- No new packages needed — pure CSS masonry with Tailwind `columns`
-- Section heading: "Browse Our Freshest Hair Designs"
+<!-- Add notes here -->
 
 ## History
 
@@ -27,3 +20,4 @@ In Progress
 - **phase-1/homepage-sections** — All 7 homepage sections (Hero, WhoWeAre, Services, Products, Reviews carousel, SampleWork, SeeYouSoon marquee) + FadeInImage component; `embla-carousel-autoplay` added (complete)
 - **phase-1/reviews-carousel** — Progress bar moved outside Carousel wrapper and synced to 5s; card centered with `margin: 0 auto`; removed double `padding-top` on `.testimonial`; added mobile responsive padding; added `.username` styles; removed `text-align: justify` to fix uneven word spacing (complete)
 - **phase-1/gallery-before-after** — BeforeAfterGallery with react-compare-slider (7 pairs); /gallery page; GalleryPair type; gallery-data.ts; 7 testimonials added to Reviews carousel; FadeInImage height: auto fix (complete)
+- **phase-1/gallery-freshest-hair** — FreshestHair Server Component with CSS masonry (2/3/4 cols); 16 images from gallery-data.ts; centering fix via flex on section; hero LCP fix with `priority` prop (complete)
