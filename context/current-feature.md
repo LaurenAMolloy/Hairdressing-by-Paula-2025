@@ -1,16 +1,24 @@
-# Current Feature
+# Current Feature: Reviews Carousel (phase-1/reviews-carousel)
 
 ## Status
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add goals here -->
+- Replace the vanilla JS progress bar + testimonial logic with ShadCN `Carousel` (built on Embla)
+- `Reviews.tsx` uses `'use client'`, ShadCN `Carousel`, and `embla-carousel-autoplay` with a 5-second delay
+- Reviews auto-play on load without any user interaction required
+- Each `CarouselItem` renders: testimonial text, star rating, and author name
+- Progress bar from the original site can be dropped (Carousel handles navigation natively) or optionally recreated as a CSS animation overlay
 
 ## Notes
 
-<!-- Add notes here -->
+- ShadCN Carousel wraps Embla — install with `npx shadcn@latest add carousel`
+- `embla-carousel-autoplay` is already installed (added during `phase-1/homepage-sections`)
+- Component lives at `components/salon/Reviews.tsx`
+- Branch: `phase-1/reviews-carousel`
+- Starter reviews data from spec: one review from Lauren, Dolgarrog — add more as Paula collects them
 
 ## History
 
