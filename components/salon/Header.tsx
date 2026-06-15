@@ -11,7 +11,7 @@ export function Header() {
       <div className="relative w-[90%] max-w-275 text-center md:flex md:justify-between md:items-center">
         <Sheet>
           <SheetTrigger
-            className="absolute left-0 top-7.5 w-16 h-16 rounded-full bg-brand-primary text-white hover:opacity-75 cursor-pointer border-0 md:hidden"
+            className="absolute left-0 top-7.5 w-16 h-16 rounded-full bg-brand-primary text-white hover:opacity-75 cursor-pointer border-0 md:hidden flex items-center justify-center"
             aria-label="open navigation"
           >
             <Menu className="w-6 h-6" />
