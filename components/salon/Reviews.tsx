@@ -38,6 +38,7 @@ export function Reviews() {
             ))}
           </CarouselContent>
         </Carousel>
+        <div className="progress-bar" />
       </div>
     </section>
   )
