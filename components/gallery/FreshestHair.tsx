@@ -20,9 +20,9 @@ const HEIGHTS = [
 export function FreshestHair({ images }: Props) {
   return (
     <section className="gallery-freshest">
-      <div className="content-wrapper">
+      <div className="w-[90%] max-w-[1100px] mx-auto relative">
         <h2>Browse Our Freshest Hair Designs</h2>
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 mx-auto">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
           {images.map((image, i) => (
             <div key={i} className={cn('relative break-inside-avoid mb-4 rounded-xl overflow-hidden', HEIGHTS[i] ?? 'h-64')}>
               <Image

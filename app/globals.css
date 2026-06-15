@@ -770,15 +770,7 @@ figcaption {
 }
 
 .gallery-freshest {
-  display: flex;
-  justify-content: center;
   padding: 3rem 0;
-}
-
-.gallery-freshest .content-wrapper {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .gallery-freshest h2 {

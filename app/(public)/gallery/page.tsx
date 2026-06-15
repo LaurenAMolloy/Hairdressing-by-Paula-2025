@@ -1,11 +1,11 @@
-import { BeforeAfterGallery } from '@/components/gallery/BeforeAfterGallery'
+import { BeforeAfterGalleryClient } from '@/components/gallery/BeforeAfterGalleryClient'
 import { FreshestHair } from '@/components/gallery/FreshestHair'
 import { beforeAfterPairs, freshestHairImages } from '@/lib/gallery-data'
 
 export default function GalleryPage() {
   return (
     <>
-      <BeforeAfterGallery pairs={beforeAfterPairs} />
+      <BeforeAfterGalleryClient pairs={beforeAfterPairs} />
       <FreshestHair images={freshestHairImages} />
     </>
   )
