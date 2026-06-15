@@ -1,5 +1,3 @@
-import Script from 'next/script'
-
 export function Footer() {
   return (
     <footer className="flex flex-col items-center justify-center text-center bg-brand-accent text-white">
@@ -48,7 +46,6 @@ export function Footer() {
         </a>
       </div>
 
-      <Script src="https://cdn.iubenda.com/iubenda.js" strategy="afterInteractive" />
     </footer>
   )
 }
