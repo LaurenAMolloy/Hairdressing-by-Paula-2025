@@ -32,6 +32,7 @@ export function Hero() {
             alt="back view of long styled hair"
             width={600}
             height={800}
+            priority
           />
         </figure>
       </div>

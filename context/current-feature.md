@@ -1,16 +1,23 @@
-# Current Feature
+# Current Feature — phase-1/gallery-freshest-hair
 
 ## Status
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add goals here -->
+- Create `components/gallery/FreshestHair.tsx` — Server Component, CSS masonry via Tailwind `columns`
+- Add all 16 images from spec with correct `src` and `alt` (already in `gallery-data.ts`)
+- Add `FreshestHair` to `app/(public)/gallery/page.tsx` below `BeforeAfterGallery`
+- Masonry renders correctly at mobile (2 cols), md (3 cols), lg (4 cols)
+- `break-inside-avoid` prevents images splitting across columns
+- No `'use client'` — pure Server Component
 
 ## Notes
 
-<!-- Add notes here -->
+- Image data (`freshestHairImages`) already exists in `lib/gallery-data.ts`
+- No new packages needed — pure CSS masonry with Tailwind `columns`
+- Section heading: "Browse Our Freshest Hair Designs"
 
 ## History
 
