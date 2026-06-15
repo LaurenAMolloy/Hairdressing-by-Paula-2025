@@ -19,3 +19,4 @@ Not Started
 - **phase-1/header-footer** — Header (ShadCN Sheet mobile nav) + Footer with dynamic copyright year (complete)
 - **phase-1/homepage-sections** — All 7 homepage sections (Hero, WhoWeAre, Services, Products, Reviews carousel, SampleWork, SeeYouSoon marquee) + FadeInImage component; `embla-carousel-autoplay` added (complete)
 - **phase-1/reviews-carousel** — Progress bar moved outside Carousel wrapper and synced to 5s; card centered with `margin: 0 auto`; removed double `padding-top` on `.testimonial`; added mobile responsive padding; added `.username` styles; removed `text-align: justify` to fix uneven word spacing (complete)
+- **phase-1/gallery-before-after** — BeforeAfterGallery with react-compare-slider (7 pairs); /gallery page; GalleryPair type; gallery-data.ts; 7 testimonials added to Reviews carousel; FadeInImage height: auto fix (complete)
