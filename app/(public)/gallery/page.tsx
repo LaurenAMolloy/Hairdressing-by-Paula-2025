@@ -9,7 +9,7 @@ export default function GalleryPage() {
       {/* Page hero */}
       <section className="bg-brand-cream py-20 text-center">
         <div className="w-[90%] max-w-275 mx-auto">
-          <p className="text-xs tracking-[0.25em] uppercase text-brand-rose mb-5">
+          <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-5">
             Gallery
           </p>
           <h1 className="font-playfair font-bold text-4xl md:text-6xl text-brand-dark leading-tight mb-5">

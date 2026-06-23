@@ -4,7 +4,7 @@ export function Products() {
   return (
     <section className="bg-white py-20">
       <div className="w-[90%] max-w-275 mx-auto">
-        <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-3">In The Salon</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-3">In The Salon</p>
         <h2 className="text-brand-dark text-3xl md:text-4xl mb-10">Products We Use...</h2>
         <div className="flex flex-col md:flex-row gap-10 items-start">
           <div className="flex-1">

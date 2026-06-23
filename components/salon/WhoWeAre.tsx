@@ -20,7 +20,7 @@ export function WhoWeAre() {
 
           {/* Text — right */}
           <div className="flex flex-col justify-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-3">The Studio</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-3">The Studio</p>
             <h2 className="text-brand-dark text-3xl md:text-4xl leading-snug mb-6">
               Who We Are
             </h2>

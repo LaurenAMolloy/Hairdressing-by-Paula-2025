@@ -36,7 +36,7 @@ export function BeforeAfterGallery({ pairs }: Props) {
                     </p>
                   )}
                   {pair.category && (
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-brand-rose font-semibold shrink-0">
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-brand-dark/50 font-semibold shrink-0">
                       {pair.category}
                     </p>
                   )}

@@ -51,7 +51,7 @@ export default function ServicesPage() {
       {/* Page hero */}
       <section className="bg-brand-cream py-24 text-center">
         <div className="w-[90%] max-w-275 mx-auto">
-          <p className="text-xs tracking-[0.25em] uppercase text-brand-primary mb-6">
+          <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-6">
             Services &amp; Products
           </p>
           <h1 className="font-playfair font-bold text-4xl md:text-6xl text-brand-dark leading-tight mb-6">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
 
                     {/* Text — padded inside card, ~55% on desktop */}
                     <div className="flex flex-col justify-center md:w-[55%] p-8 md:p-12 lg:p-16">
-                      <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-3">
+                      <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-3">
                         {service.eyebrow}
                       </p>
                       <h2 className="text-brand-dark text-3xl md:text-4xl leading-snug mb-6">
@@ -124,7 +124,7 @@ export default function ServicesPage() {
         </div>
         <section className="py-20">
           <div className="w-[90%] max-w-275 mx-auto">
-            <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-4">Full Menu</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-4">Full Menu</p>
             <h2 className="text-brand-dark text-3xl md:text-4xl mb-10">Other Services Available</h2>
             <ul className="flex flex-wrap gap-3 list-none p-0 m-0">
               {otherServices.map((s) => (

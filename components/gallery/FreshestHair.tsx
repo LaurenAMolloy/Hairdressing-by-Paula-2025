@@ -21,7 +21,7 @@ export function FreshestHair({ images }: Props) {
   return (
     <section className="py-16">
       <div className="w-[90%] max-w-275 mx-auto">
-        <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-4 text-center">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-4 text-center">
           Portfolio
         </p>
         <h2 className="font-playfair text-3xl md:text-4xl text-brand-dark text-center mb-12">

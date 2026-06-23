@@ -10,7 +10,7 @@ export function Hero() {
         className="flex flex-col justify-center px-10 lg:px-20 py-20"
         style={{ background: 'radial-gradient(ellipse at 0% 110%, #f3b0e6 0%, #e6e6e6 55%)' }}
       >
-        <p className="text-xs tracking-[0.25em] uppercase text-brand-primary mb-8">
+        <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-8">
           Modern Hair Studio
         </p>
 

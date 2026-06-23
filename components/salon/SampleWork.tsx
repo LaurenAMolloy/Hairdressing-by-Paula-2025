@@ -14,7 +14,7 @@ export function SampleWork() {
       <div className="w-[90%] max-w-275 mx-auto">
         <div className="flex items-baseline justify-between mb-12">
           <div>
-            <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-2">Portfolio</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 mb-2">Portfolio</p>
             <h2 className="text-brand-dark text-3xl md:text-4xl">A Sample of our Work</h2>
           </div>
           <Link

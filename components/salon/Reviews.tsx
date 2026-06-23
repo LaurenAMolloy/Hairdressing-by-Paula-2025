@@ -52,7 +52,7 @@ export function Reviews() {
   return (
     <section className="bg-[#e6e6e6] py-20">
       <div className="w-[90%] max-w-275 mx-auto">
-        <p className="text-xs tracking-[0.2em] uppercase text-brand-rose text-center mb-3">Testimonials</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-dark/50 text-center mb-3">Testimonials</p>
         <h2 className="text-center text-brand-dark text-3xl md:text-4xl mb-12">Happy Clients</h2>
         <Carousel plugins={[plugin.current]} opts={{ loop: true }}>
           <CarouselContent>

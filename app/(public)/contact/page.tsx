@@ -4,7 +4,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-brand-bg py-20 border-b border-brand-dark/10">
         <div className="w-[90%] mx-auto max-w-275">
-          <p className="text-xs tracking-[0.25em] uppercase text-brand-primary mb-4">Get in touch</p>
+          <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-4">Get in touch</p>
           <h1 className="font-playfair font-bold text-5xl lg:text-6xl leading-tight text-brand-dark mb-6 max-w-lg">
             Book your next <span className="text-brand-primary">appointment</span>
           </h1>
