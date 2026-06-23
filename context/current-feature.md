@@ -1,16 +1,26 @@
-# Current Feature
+# Current Feature: phase-1/contact-page
 
 ## Status
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add goals here -->
+- Create `app/(public)/contact/page.tsx` as a Server Component (no form, no interactivity)
+- Heading: "Contact us, because you all need great hair!"
+- CTA button linking to `tel:07805287950` — same ShadCN `Button` custom variant as homepage
+- Contact info block: Hours (Mon–Sat 9.30am–5.30pm, Sunday Closed), Phone, Email, Address
+- Embedded Google Map iframe in a fixed aspect-ratio container
+- No ShadCN Input/Textarea/Label needed — this page has no form
 
 ## Notes
 
-<!-- Add notes here -->
+- Source: `context/features/phase-1-spec.md` → Contact Page section (line ~688)
+- Branch: `phase-1/contact-page`
+- Server Component only — no `'use client'` needed
+- Reuse the same ShadCN `Button` variant already used on the Hero CTA
+- Map: plain `<iframe>` embed, wrapped in `aspect-video` or `h-80` div
+- Contact info: Phone `07805 287950` (tel link), Email `paulafinchhair@aol.com` (mailto link), Address `B5106, Trefriw LL27 0JG`
 
 ## History
 
