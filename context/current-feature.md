@@ -2,22 +2,11 @@
 
 ## Status
 
-In Progress
+Not Started
 
 ## Goals
 
-Fix high-priority UI issues identified by the ui-reviewer agent.
-
 ## Notes
-
-Branch: fix/ui-high-priority
-
-Fixes:
-- Hero CTA "View Services" was linking to /gallery → fixed to /services
-- Services homepage section "View all services" links (desktop + mobile) were linking to /contact → fixed to /services
-- Contact page restyled from legacy unstyled markup to match site visual language (hero + contact grid + map)
-- SeeYouSoon marquee: duplicated strip for seamless loop; keyframe changed from -100% to -50%; removed invalid role="marquee", added aria-hidden="true"
-- FadeInImage: wrapper div now has w-full h-full so it fills aspect-square containers; removed bogus height:auto inline style override
 
 ## History
 
@@ -31,3 +20,4 @@ Fixes:
 - **phase-1/contact-page** — Server Component at /contact; heading, Book An Appointment CTA (tel link), contact info block (hours/phone/email/address), embedded Google Map iframe; map CSS added to globals.css (complete)
 - **phase-1.5/css-to-tailwind** — Migrated all vanilla CSS from globals.css to inline Tailwind; global element styles moved to @layer base; h2 span (dancing script) and figcaption added to @layer base; marquee keyframes + complex selectors retained in CSS; old vanilla JS site files and unused ShadCN components (input, label, textarea) deleted (complete)
 - **feature/homepage-redesign** — Full homepage redesign: rebuilt Hero, WhoWeAre, Services, Products, Reviews, SampleWork, SeeYouSoon, Header, Footer with refined Tailwind layouts and brand tokens; added /services page with cream hero, alternating image/text cards (grey bg + shadow), other services pill list, and warm CTA; added Services link to nav (complete)
+- **fix/ui-high-priority** — Fixed 5 high-priority issues from ui-reviewer audit: Hero/Services wrong hrefs pointing to /gallery and /contact now point to /services; contact page restyled to match site visual language; SeeYouSoon marquee seamless loop fix + aria-hidden; FadeInImage CLS fix with w-full h-full wrapper (complete)
