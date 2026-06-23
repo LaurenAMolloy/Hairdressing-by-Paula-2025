@@ -120,6 +120,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 h1 {
@@ -854,10 +855,6 @@ figcaption {
   .hero-img {
     display: flex;
     flex-basis: 50%;
-  }
-
-  .hero img {
-    object-fit: cover;
   }
 
   .hero-text h1 {
