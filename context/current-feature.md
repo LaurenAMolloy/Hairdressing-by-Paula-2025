@@ -2,15 +2,22 @@
 
 ## Status
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add goals here -->
+Fix high-priority UI issues identified by the ui-reviewer agent.
 
 ## Notes
 
-<!-- Add notes here -->
+Branch: fix/ui-high-priority
+
+Fixes:
+- Hero CTA "View Services" was linking to /gallery → fixed to /services
+- Services homepage section "View all services" links (desktop + mobile) were linking to /contact → fixed to /services
+- Contact page restyled from legacy unstyled markup to match site visual language (hero + contact grid + map)
+- SeeYouSoon marquee: duplicated strip for seamless loop; keyframe changed from -100% to -50%; removed invalid role="marquee", added aria-hidden="true"
+- FadeInImage: wrapper div now has w-full h-full so it fills aspect-square containers; removed bogus height:auto inline style override
 
 ## History
 

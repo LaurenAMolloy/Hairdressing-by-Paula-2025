@@ -25,8 +25,8 @@ export function FadeInImage({ wrapperClassName, ...props }: FadeInImageProps) {
   }, [])
 
   return (
-    <div ref={ref} className={`opacity-0 translate-y-4 transition-all duration-700${wrapperClassName ? ` ${wrapperClassName}` : ''}`}>
-      <Image style={{ height: 'auto', ...props.style }} {...props} />
+    <div ref={ref} className={`w-full h-full opacity-0 translate-y-4 transition-all duration-700${wrapperClassName ? ` ${wrapperClassName}` : ''}`}>
+      <Image {...props} />
     </div>
   )
 }

@@ -36,7 +36,7 @@ export function Hero() {
             Book an Appointment <span aria-hidden>→</span>
           </a>
           <Link
-            href="/gallery"
+            href="/services"
             className="inline-flex items-center px-7 py-3.5 rounded-full border border-brand-dark/30 text-brand-dark text-sm font-medium hover:border-brand-dark transition-colors"
           >
             View Services

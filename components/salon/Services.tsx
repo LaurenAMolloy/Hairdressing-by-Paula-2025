@@ -50,7 +50,7 @@ export function Services() {
         <div className="flex items-baseline justify-between mb-12">
           <h2 className="text-brand-dark text-3xl md:text-5xl font-playfair">Popular Services</h2>
           <Link
-            href="/contact"
+            href="/services"
             className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-primary hover:opacity-75 transition-opacity font-medium"
           >
             View all services <span aria-hidden>→</span>
@@ -106,7 +106,7 @@ export function Services() {
 
         {/* Mobile "view all" link */}
         <div className="sm:hidden mt-8 text-center">
-          <Link href="/contact" className="text-sm text-brand-primary font-medium">
+          <Link href="/services" className="text-sm text-brand-primary font-medium">
             View all services →
           </Link>
         </div>
