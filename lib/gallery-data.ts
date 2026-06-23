@@ -4,30 +4,51 @@ export const beforeAfterPairs: GalleryPair[] = [
   {
     before: { src: '/img/before-and-after/blonde-before-hair.jpg', alt: 'mid blonde hair in need of styling' },
     after: { src: '/img/before-and-after/blonde-after-hair.jpg', alt: 'mid blonde hair styled and curled' },
+    title: 'Volume & Movement',
+    description: 'From flat to fabulous — bouncy curls with body that lasts.',
+    category: 'Blow Dry',
   },
   {
     before: { src: '/img/before-and-after/blonde-bob-before.jpg', alt: 'short blonde hair with dark roots' },
     after: { src: '/img/before-and-after/short-blonde-after.jpg', alt: 'short bobbed blonde hair freshly colored and styled' },
+    title: 'Root Refresh',
+    description: 'Roots blended, ends brightened — a full-colour bob transformation.',
+    category: 'Colour',
   },
   {
     before: { src: '/img/before-and-after/bronde-hair-before.jpg', alt: 'mid length bronde straight hair needing a cut' },
     after: { src: '/img/before-and-after/bronde-hair-after.jpg', alt: 'mid length straight bronde hair freshly coloured and styled' },
+    title: 'Bronde Glow',
+    description: 'Warm bronde tones, a fresh cut, and a gloss-smooth finish.',
+    category: 'Colour & Cut',
   },
   {
     before: { src: '/img/extra-images/long-dark-before.jpg', alt: 'long dark wavy hair' },
     after: { src: '/img/extra-images/dark-bob-styled.jpg', alt: 'short dark bobbed hair styled' },
+    title: 'The Big Chop',
+    description: 'Trading length for shape — a bold, chic bob that changed everything.',
+    category: 'Cut & Style',
   },
   {
     before: { src: '/img/before-and-after/extra-long-brown-before.jpg', alt: 'very long frizzy hair' },
     after: { src: '/img/before-and-after/extra-long-brown-after.jpg', alt: 'very long curled hair' },
+    title: 'Curl Revival',
+    description: 'Frizz tamed, curls defined — long hair transformed from wild to wow.',
+    category: 'Blow Dry',
   },
   {
     before: { src: '/img/before-and-after/sleek-bob-before.jpg', alt: 'long frizzy blonde hair' },
     after: { src: '/img/before-and-after/sleek-bob-after.jpg', alt: 'sleek bob' },
+    title: 'The Sleek Bob',
+    description: 'From frizzy and long to a razor-sharp, sleek bob — pure confidence.',
+    category: 'Cut & Style',
   },
   {
     before: { src: '/img/before-and-after/blonde-wavy-before.jpg', alt: 'wet hair about to be cut' },
     after: { src: '/img/before-and-after/blonder-wavy-after-2.jpg', alt: 'blonde hair curled and styled' },
+    title: 'Blonde Waves',
+    description: 'Fresh colour and sculpted waves for a sun-kissed, effortless finish.',
+    category: 'Colour & Style',
   },
 ]
 

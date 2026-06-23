@@ -28,7 +28,7 @@ export function Products() {
               alt="muk shampoo logo"
               width={240}
               height={240}
-              className="rounded-xl"
+              className="rounded-xl w-60 h-auto"
             />
           </figure>
         </div>

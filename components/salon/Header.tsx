@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
   { href: '/services', label: 'Services' },
@@ -12,8 +13,10 @@ const navLinks = [
 ]
 
 export function Header() {
+  const pathname = usePathname()
+
   return (
-    <header className="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-sm border-b border-brand-rose/20">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-brand-rose/20">
       <div className="w-[90%] max-w-275 mx-auto flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
@@ -31,16 +34,23 @@ export function Header() {
         {/* Desktop nav — centred */}
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2">
           <ul className="flex items-center gap-8 list-none m-0 p-0">
-            {navLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="text-sm tracking-widest uppercase text-brand-dark/70 hover:text-brand-dark transition-colors"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map(({ href, label }) => {
+              const isActive = pathname === href
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`text-sm tracking-widest uppercase transition-colors px-4 py-1.5 rounded-full ${
+                      isActive
+                        ? 'text-brand-rose bg-brand-rose/10'
+                        : 'text-brand-dark/70 hover:text-brand-dark'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
 
@@ -63,16 +73,23 @@ export function Header() {
           <SheetContent side="left" className="bg-brand-cream">
             <nav className="mt-10">
               <ul className="list-none p-0 m-0 space-y-5">
-                {navLinks.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="text-lg tracking-widest uppercase text-brand-dark/70 hover:text-brand-dark transition-colors"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
+                {navLinks.map(({ href, label }) => {
+                  const isActive = pathname === href
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className={`text-lg tracking-widest uppercase transition-colors px-4 py-1.5 rounded-full inline-block ${
+                          isActive
+                            ? 'text-brand-rose bg-brand-rose/10'
+                            : 'text-brand-dark/70 hover:text-brand-dark'
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  )
+                })}
                 <li className="pt-4">
                   <Link
                     href="tel:+447805287950"

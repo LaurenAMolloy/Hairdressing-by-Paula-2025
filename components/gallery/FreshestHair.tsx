@@ -19,19 +19,36 @@ const HEIGHTS = [
 
 export function FreshestHair({ images }: Props) {
   return (
-    <section className="py-12">
-      <div className="w-[90%] max-w-275 mx-auto relative">
-        <h2 className="text-brand-primary text-center pb-8">Browse Our Freshest Hair Designs</h2>
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+    <section className="py-16">
+      <div className="w-[90%] max-w-275 mx-auto">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-4 text-center">
+          Portfolio
+        </p>
+        <h2 className="font-playfair text-3xl md:text-4xl text-brand-dark text-center mb-12">
+          Freshest Hair
+        </h2>
+        <div className="columns-1 md:columns-3 lg:columns-4 gap-4">
           {images.map((image, i) => (
-            <div key={i} className={cn('relative break-inside-avoid mb-4 rounded-xl overflow-hidden', HEIGHTS[i] ?? 'h-64')}>
+            <div
+              key={i}
+              className={cn(
+                'relative break-inside-avoid mb-4 rounded-xl overflow-hidden group',
+                HEIGHTS[i] ?? 'h-64'
+              )}
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                className="object-cover"
+                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               />
+              {/* Caption overlay on hover */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center px-4">
+                <p className="text-white text-sm font-playfair text-center leading-snug">
+                  {image.alt}
+                </p>
+              </div>
             </div>
           ))}
         </div>
