@@ -9,17 +9,21 @@ const images = [
 
 export function SampleWork() {
   return (
-    <section className="sample">
-      <div className="content-wrapper">
-        <div>
-          <h2>A Sample of our Work</h2>
-          <div className="square-img-container">
-            {images.map((img) => (
-              <div key={img.src} className="square-img">
-                <FadeInImage src={img.src} alt={img.alt} width={300} height={300} />
-              </div>
-            ))}
-          </div>
+    <section className="flex justify-center bg-[#aaaaaa] text-black">
+      <div className="w-[90%] mx-auto max-w-275 relative mb-8">
+        <h2 className="text-center text-[2.5rem] py-[1.4rem]">A Sample of our Work</h2>
+        <div className="flex justify-center flex-wrap">
+          {images.map((img) => (
+            <div key={img.src} className="flex items-center flex-col flex-wrap basis-2/5 p-2.5">
+              <FadeInImage
+                src={img.src}
+                alt={img.alt}
+                width={300}
+                height={300}
+                className="w-full border-[3px] border-brand-primary"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

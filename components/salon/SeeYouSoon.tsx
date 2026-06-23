@@ -4,19 +4,19 @@ const ITEMS = ['See You Soon!', 'See You Soon!', 'See You Soon!', 'See You Soon!
 
 export function SeeYouSoon() {
   return (
-    <section className="see-you-soon">
-      <div className="content-wrapper">
-        <div className="scrolling-text-container">
+    <section className="flex justify-center bg-white py-8">
+      <div className="w-[90%] mx-auto max-w-275 relative">
+        <div className="bg-white rounded-[4px] overflow-hidden scrolling-text-container">
           <div
-            className="scrolling-text-inner"
+            className="flex whitespace-nowrap text-[4rem] font-semibold py-2 text-brand-primary font-platypi scrolling-text-inner"
             style={
               { '--marquee-speed': '20s', '--direction': 'scroll-left' } as React.CSSProperties
             }
             role="marquee"
           >
-            <div className="scrolling-text">
+            <div className="flex">
               {ITEMS.map((text, i) => (
-                <div key={i} className="scrolling-text-item">
+                <div key={i} className="px-[30px]">
                   <h2>{text}</h2>
                 </div>
               ))}

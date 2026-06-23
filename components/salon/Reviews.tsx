@@ -50,25 +50,25 @@ export function Reviews() {
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }))
 
   return (
-    <section className="reviews">
-      <div className="content-wrapper">
-        <h2>Happy Clients</h2>
+    <section className="flex justify-center">
+      <div className="w-[90%] mx-auto max-w-275 relative">
+        <h2 className="text-center text-black font-semibold text-[2.5rem] py-[1.4rem]">Happy Clients</h2>
         <Carousel plugins={[plugin.current]} opts={{ loop: true }}>
           <CarouselContent>
             {reviews.map((review, i) => (
               <CarouselItem key={i}>
-                <div className="testimonial-container">
-                  <p className="testimonial">{review.text}</p>
-                  <p className="stars">{review.stars}</p>
-                  <div className="user-details">
-                    <h4 className="username">{review.author}</h4>
+                <div className="bg-white rounded-2xl px-6 py-8 max-w-3xl mx-auto min-[600px]:px-20 min-[600px]:py-12">
+                  <p className="leading-8">{review.text}</p>
+                  <p className="text-center pb-[0.9rem] text-brand-primary">{review.stars}</p>
+                  <div>
+                    <h4 className="mt-2 text-base text-[#555]">{review.author}</h4>
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="progress-bar" />
+        <div className="bg-brand-primary h-1 w-full mt-6 animate-[grow_5s_linear_infinite] origin-left" />
       </div>
     </section>
   )

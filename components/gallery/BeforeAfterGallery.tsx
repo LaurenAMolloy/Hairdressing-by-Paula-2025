@@ -9,9 +9,9 @@ interface Props {
 
 export function BeforeAfterGallery({ pairs }: Props) {
   return (
-    <section className="gallery-before-after">
-      <div className="content-wrapper">
-        <h1 className="pb-6">View Our Latest Hair Transformations</h1>
+    <section className="flex justify-center pb-12">
+      <div className="w-[90%] mx-auto max-w-275 relative flex justify-center items-start flex-wrap">
+        <h1 className="text-center leading-[1.2] w-full pb-6">View Our Latest Hair Transformations</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {pairs.map((pair, i) => (
             <div key={i} className="rounded-xl overflow-hidden">
