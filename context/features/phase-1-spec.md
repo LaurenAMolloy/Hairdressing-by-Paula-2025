@@ -16,7 +16,7 @@ Use ShadCN for UI **patterns** (interactive, reusable, accessibility-sensitive).
 | Mobile nav drawer | ✅ ShadCN | `Sheet` | Slide-out panel is exactly what Sheet is for |
 | CTA "Book An Appointment" button | ✅ ShadCN | `Button` (custom variant) | Consistent interactive states, easy to restyle |
 | Reviews / testimonial carousel | ✅ ShadCN | `Carousel` (built on Embla) | Replaces vanilla JS progress bar logic cleanly |
-| Contact form fields | ✅ ShadCN | `Input`, `Textarea`, `Label`, `Button` | Accessible, consistent form pattern |
+| Contact page CTA button | ✅ ShadCN | `Button` (custom variant) | Phone booking CTA — consistent with homepage CTA |
 | Hero section | ❌ Custom Tailwind | — | Bespoke branded layout — ShadCN would genericise it |
 | Service cards | ❌ Custom Tailwind | — | Brand-specific layout; ShadCN `Card` would look wrong |
 | Who We Are section | ❌ Custom Tailwind | — | Two-column branded layout, no interactivity needed |
@@ -655,11 +655,8 @@ Run these once after Next.js project setup:
 # ShadCN
 npx shadcn@latest init
 npx shadcn@latest add sheet      # mobile nav drawer
-npx shadcn@latest add button     # CTA + form submit
+npx shadcn@latest add button     # CTA buttons (homepage + contact)
 npx shadcn@latest add carousel   # reviews/testimonials
-npx shadcn@latest add input      # contact form (pending audit)
-npx shadcn@latest add textarea   # contact form (pending audit)
-npx shadcn@latest add label      # contact form (pending audit)
 
 # Gallery
 npm install react-compare-slider  # before/after drag reveal
@@ -688,9 +685,51 @@ npm install react-compare-slider  # before/after drag reveal
 
 ---
 
+## 📞 Contact Page — `app/(public)/contact/page.tsx`
+
+**Audited ✅** — No contact form. The page is informational only: direct contact methods + embedded Google Map.
+
+### Heading
+> "Contact us, because you all need great hair!"
+
+### CTA Button
+- Label: links to phone number (`tel:07805287950`)
+- Style: matches homepage "Book An Appointment" CTA — use the same ShadCN `Button` custom variant
+
+### Contact Info Block
+| Field | Value |
+|---|---|
+| Hours | Monday–Saturday: 9.30am–5.30pm / Sunday: Closed |
+| Phone | 07805 287950 (clickable `tel:` link) |
+| Email | paulafinchhair@aol.com (clickable `mailto:` link) |
+| Address | B5106, Trefriw LL27 0JG |
+
+### Google Map
+- Embedded `<iframe>` for the salon's location
+- Wrap in a `<div>` with fixed aspect ratio (e.g. `aspect-video` or `h-80`)
+- No JavaScript or third-party library needed — plain iframe embed
+
+### Component structure
+```tsx
+// app/(public)/contact/page.tsx
+// Server Component — no interactivity needed
+export default function ContactPage() {
+  return (
+    <main>
+      <section> {/* heading + CTA */} </section>
+      <section> {/* contact info grid */} </section>
+      <section> {/* Google Map iframe */} </section>
+    </main>
+  )
+}
+```
+
+### No form — no ShadCN Input/Textarea/Label needed for this page.
+
+---
+
 ## ⚠️ Still Needs Auditing
 
-- `contact/index.html` — unknown structure, likely a contact form → ShadCN form components confirmed above but fields TBC
 - `js/main.js` — contains mobile nav logic (replaced by Sheet), fade-in observer (replaced by FadeInImage), possibly review carousel logic (replaced by Carousel)
 - `css/main.css` — source of all colour tokens — extract these before starting Tailwind migration
 
