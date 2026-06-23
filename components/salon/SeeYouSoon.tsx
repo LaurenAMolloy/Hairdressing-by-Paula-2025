@@ -4,11 +4,11 @@ const ITEMS = ['See You Soon!', 'See You Soon!', 'See You Soon!', 'See You Soon!
 
 export function SeeYouSoon() {
   return (
-    <section className="flex justify-center bg-white py-8">
+    <section className="bg-white py-8 border-t border-brand-rose/20">
       <div className="w-[90%] mx-auto max-w-275 relative">
-        <div className="bg-white rounded-[4px] overflow-hidden scrolling-text-container">
+        <div className="rounded overflow-hidden scrolling-text-container">
           <div
-            className="flex whitespace-nowrap text-[4rem] font-semibold py-2 text-brand-primary font-platypi scrolling-text-inner"
+            className="flex whitespace-nowrap text-[4rem] font-semibold py-2 text-brand-rose font-playfair scrolling-text-inner"
             style={
               { '--marquee-speed': '20s', '--direction': 'scroll-left' } as React.CSSProperties
             }

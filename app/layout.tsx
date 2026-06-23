@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Montserrat, Pacifico, Platypi, Geist } from "next/font/google";
+import { Dancing_Script, Inter, Pacifico, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
@@ -11,20 +14,16 @@ const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
 });
 
-const montserrat = Montserrat({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
 });
 
 const pacifico = Pacifico({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-pacifico",
-});
-
-const platypi = Platypi({
-  subsets: ["latin"],
-  variable: "--font-platypi",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(dancingScript.variable, montserrat.variable, pacifico.variable, platypi.variable, "font-sans", geist.variable)}
+      className={cn(dancingScript.variable, inter.variable, pacifico.variable, playfair.variable, "font-sans")}
     >
       <body>{children}</body>
     </html>
