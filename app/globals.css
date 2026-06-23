@@ -7,18 +7,20 @@
 /* Brand tokens */
 @theme inline {
   --color-brand-primary: #e318b7;
-  --color-brand-accent: #db00b0;
-  --color-brand-bg: #dcdcdc;
-  --color-brand-dark: #222222;
+  --color-brand-accent: #e318b7;
+  --color-brand-bg: #FAF8F5;
+  --color-brand-dark: #1C1C1C;
+  --color-brand-rose: #e318b7;
+  --color-brand-rose-light: #fdeef8;
+  --color-brand-cream: #FAF8F5;
 
   --font-dancing: var(--font-dancing-script);
-  --font-montserrat: var(--font-montserrat);
+  --font-playfair: var(--font-playfair);
   --font-pacifico: var(--font-pacifico);
-  --font-platypi: var(--font-platypi);
 
   --radius-salon: 1.25rem;
 
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-playfair);
 
   --font-sans: var(--font-sans);
 
@@ -212,26 +214,26 @@
     @apply font-sans text-base;
   }
   body {
-    @apply bg-brand-bg text-brand-dark font-montserrat m-0 p-0;
+    @apply bg-brand-bg text-brand-dark font-sans m-0 p-0;
   }
   img {
     @apply max-w-full h-auto;
   }
   h1 {
-    @apply font-platypi font-bold text-[2.5rem];
+    @apply font-playfair font-semibold text-[2.5rem] tracking-tight;
   }
   h2 {
-    @apply font-platypi font-medium text-[1.875em] m-0;
+    @apply font-playfair font-medium text-[1.875em] m-0 tracking-tight;
   }
   h2 span {
     @apply font-dancing text-[2em] text-brand-primary;
   }
   h3,
   h4 {
-    @apply font-platypi font-normal text-[1.25em];
+    @apply font-playfair font-normal text-[1.25em];
   }
   p {
-    @apply leading-[1.285];
+    @apply leading-relaxed;
   }
   address {
     @apply not-italic;

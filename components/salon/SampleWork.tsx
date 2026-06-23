@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FadeInImage } from '@/components/salon/FadeInImage'
 
 const images = [
@@ -9,18 +10,29 @@ const images = [
 
 export function SampleWork() {
   return (
-    <section className="flex justify-center bg-[#aaaaaa] text-black">
-      <div className="w-[90%] mx-auto max-w-275 relative mb-8">
-        <h2 className="text-center text-[2.5rem] py-[1.4rem]">A Sample of our Work</h2>
-        <div className="flex justify-center flex-wrap">
+    <section className="bg-brand-cream py-20">
+      <div className="w-[90%] max-w-275 mx-auto">
+        <div className="flex items-baseline justify-between mb-12">
+          <div>
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-2">Portfolio</p>
+            <h2 className="text-brand-dark text-3xl md:text-4xl">A Sample of our Work</h2>
+          </div>
+          <Link
+            href="/gallery"
+            className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-dark/60 hover:text-brand-dark transition-colors"
+          >
+            Full gallery <span aria-hidden>→</span>
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((img) => (
-            <div key={img.src} className="flex items-center flex-col flex-wrap basis-2/5 p-2.5">
+            <div key={img.src} className="rounded-xl overflow-hidden aspect-square">
               <FadeInImage
                 src={img.src}
                 alt={img.alt}
-                width={300}
-                height={300}
-                className="w-full border-[3px] border-brand-primary"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover"
               />
             </div>
           ))}

@@ -2,15 +2,21 @@
 
 ## Status
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add goals here -->
+- Create /services page with hero, alternating image+text service sections, other services list, and bottom CTA
+- Add Services link to the Header nav
+- Match existing design system (Playfair headings, brand tokens, cream/white backgrounds, rounded-3xl images)
 
 ## Notes
 
-<!-- Add notes here -->
+- Branch: feature/homepage-redesign
+- 3 services with images (Cut & Blow Dry, Colour & Balayage, Bridal & Occasion) use alternating flex-row / flex-row-reverse layout at md+
+- Other Services Available rendered as pill tags (matching Services.tsx pattern)
+- Bottom CTA uses same radial-gradient as the hero section on the homepage
+- "Services" nav link added between logo and Gallery in Header.tsx
 
 ## History
 

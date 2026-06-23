@@ -50,25 +50,24 @@ export function Reviews() {
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }))
 
   return (
-    <section className="flex justify-center">
-      <div className="w-[90%] mx-auto max-w-275 relative">
-        <h2 className="text-center text-black font-semibold text-[2.5rem] py-[1.4rem]">Happy Clients</h2>
+    <section className="bg-[#e6e6e6] py-20">
+      <div className="w-[90%] max-w-275 mx-auto">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-rose text-center mb-3">Testimonials</p>
+        <h2 className="text-center text-brand-dark text-3xl md:text-4xl mb-12">Happy Clients</h2>
         <Carousel plugins={[plugin.current]} opts={{ loop: true }}>
           <CarouselContent>
             {reviews.map((review, i) => (
               <CarouselItem key={i}>
-                <div className="bg-white rounded-2xl px-6 py-8 max-w-3xl mx-auto min-[600px]:px-20 min-[600px]:py-12">
-                  <p className="leading-8">{review.text}</p>
-                  <p className="text-center pb-[0.9rem] text-brand-primary">{review.stars}</p>
-                  <div>
-                    <h4 className="mt-2 text-base text-[#555]">{review.author}</h4>
-                  </div>
+                <div className="bg-white rounded-2xl px-8 py-10 max-w-3xl mx-auto sm:px-16 sm:py-14 shadow-sm">
+                  <p className="text-brand-rose text-lg mb-4">{review.stars}</p>
+                  <p className="text-brand-dark/70 leading-relaxed italic mb-6">&ldquo;{review.text}&rdquo;</p>
+                  <h4 className="text-sm text-brand-dark/50 tracking-wide font-sans">— {review.author}</h4>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="bg-brand-primary h-1 w-full mt-6 animate-[grow_5s_linear_infinite] origin-left" />
+        <div className="bg-brand-rose h-0.5 w-full mt-8 animate-[grow_5s_linear_infinite] origin-left" />
       </div>
     </section>
   )

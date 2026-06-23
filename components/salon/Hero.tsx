@@ -1,44 +1,67 @@
-import { FadeInImage } from '@/components/salon/FadeInImage'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section className="flex justify-center items-center w-full mt-[30px] mb-10 bg-brand-bg">
-      <div className="w-[90%] mx-auto max-w-275 relative md:flex md:flex-row md:justify-between">
-        <div className="text-center md:flex md:flex-col md:items-center md:basis-[45%]">
-          <h1 className="leading-[1.2]">
-            Hairdressing by <span className="text-brand-primary">Paula Lorraine</span>
-          </h1>
-          <h2 className="leading-[1.5] text-center pb-12 md:leading-[1.2] md:mt-0 md:pb-8">
-            Feel special and new
-            <br />
-            BE YOU!
-            <br />
-            <span>Love</span> is in the <span>hair</span>
-            <br />
-            If it&apos;s about hair we care
-          </h2>
+    <section className="min-h-[calc(100vh-5rem)] grid grid-cols-1 md:grid-cols-2">
+
+      {/* Left — text content on grey + pink corner gradient */}
+      <div
+        className="flex flex-col justify-center px-10 lg:px-20 py-20"
+        style={{ background: 'radial-gradient(ellipse at 0% 110%, #f3b0e6 0%, #e6e6e6 55%)' }}
+      >
+        <p className="text-xs tracking-[0.25em] uppercase text-brand-primary mb-8">
+          Modern Hair Studio
+        </p>
+
+        <h1 className="font-playfair font-bold text-5xl lg:text-6xl leading-tight text-brand-dark mb-1">
+          Hairdressing by{' '}
+          <span className="text-brand-primary">Paula Lorraine</span>
+        </h1>
+
+        <p className="font-dancing text-3xl text-brand-primary mt-3 mb-8">
+          Love is in the hair
+        </p>
+
+        <p className="text-brand-dark/70 text-base leading-relaxed mb-10 max-w-sm">
+          Feel special and new — be you. If it&apos;s about hair, we care.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-wrap gap-4 mb-10">
           <a
-            className="block bg-brand-accent text-white text-[1.2rem] px-4 py-4 no-underline rounded-[60px] transition-[background] duration-500 ease hover:bg-brand-dark md:w-1/2"
             href="tel:+447805287950"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            Book An Appointment
+            Book an Appointment <span aria-hidden>→</span>
           </a>
-          <h3 className="font-montserrat text-center font-bold pt-[60px] md:mb-0 md:pt-4">07805 287950</h3>
-          <h3 className="font-montserrat text-center font-bold">
-            <a href="mailto:paulafinchhair@aol.com">paulafinchhair@aol.com</a>
-          </h3>
-          <address className="pb-5 md:pb-0">B5106, Trefriw LL27 0JG</address>
+          <Link
+            href="/gallery"
+            className="inline-flex items-center px-7 py-3.5 rounded-full border border-brand-dark/30 text-brand-dark text-sm font-medium hover:border-brand-dark transition-colors"
+          >
+            View Services
+          </Link>
         </div>
-        <figure className="md:flex md:basis-[50%]">
-          <FadeInImage
-            src="/img/hair/hero-hair.jpg"
-            alt="back view of long styled hair"
-            width={600}
-            height={800}
-            priority
-          />
-        </figure>
+
+        {/* Social proof */}
+        <div className="flex items-center gap-3 text-sm text-brand-dark/60">
+          <span className="text-brand-primary tracking-widest">★★★★★</span>
+          <span>Loved by local clients</span>
+        </div>
       </div>
+
+      {/* Right — photo */}
+      <div className="relative min-h-[60vh] md:min-h-full">
+        <Image
+          src="/img/hair/hero-hair.jpg"
+          alt="back view of long styled hair"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+
     </section>
   )
 }
