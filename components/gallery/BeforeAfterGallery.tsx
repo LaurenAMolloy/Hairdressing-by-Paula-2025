@@ -18,10 +18,20 @@ export function BeforeAfterGallery({ pairs }: Props) {
               <div className="rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300">
                 <ReactCompareSlider
                   itemOne={
-                    <ReactCompareSliderImage src={pair.before.src} alt={pair.before.alt} />
+                    <div className="relative w-full h-full">
+                      <ReactCompareSliderImage src={pair.before.src} alt={pair.before.alt} />
+                      <span className="absolute bottom-3 left-3 bg-black/50 text-white text-[10px] font-semibold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        Before
+                      </span>
+                    </div>
                   }
                   itemTwo={
-                    <ReactCompareSliderImage src={pair.after.src} alt={pair.after.alt} />
+                    <div className="relative w-full h-full">
+                      <ReactCompareSliderImage src={pair.after.src} alt={pair.after.alt} />
+                      <span className="absolute bottom-3 right-3 bg-brand-primary/80 text-white text-[10px] font-semibold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        After
+                      </span>
+                    </div>
                   }
                 />
               </div>
