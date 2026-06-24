@@ -30,17 +30,17 @@ export function Footer() {
             <h4 className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-5 font-sans">Visit</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 text-white/30">📍</span>
+                <span className="mt-0.5 text-white/80">📍</span>
                 <address className="not-italic">B5106, Trefriw LL27 0JG</address>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/30">📞</span>
+                <span className="text-white/80">📞</span>
                 <a href="tel:+447805287950" className="text-white/70 hover:text-white transition-colors">
                   07805 287950
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/30">✉</span>
+                <span className="text-white/80">✉</span>
                 <a href="mailto:paulafinchhair@aol.com" className="text-white/70 hover:text-white transition-colors">
                   paulafinchhair@aol.com
                 </a>
