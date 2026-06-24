@@ -28,8 +28,8 @@ export function Products() {
               alt="muk shampoo logo"
               width={240}
               height={240}
-              className="rounded-xl w-60 h-auto"
-              style={{ height: 'auto' }}
+              className="rounded-xl"
+              style={{ width: '15rem', height: 'auto' }}
             />
             <figcaption className="text-xs text-brand-dark/50 mt-2">Muk Haircare</figcaption>
           </figure>

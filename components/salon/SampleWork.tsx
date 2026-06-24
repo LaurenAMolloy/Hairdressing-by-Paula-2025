@@ -4,7 +4,9 @@ import { FadeInImage } from '@/components/salon/FadeInImage'
 const images = [
   { src: '/img/square-img/square-1.png', alt: 'brunette curly hair' },
   { src: '/img/square-img/square-red-bob.png', alt: 'short red bob haircut' },
+  { src: '/img/square-img/square-2.png', alt: 'layered golden blonde bob back view' },
   { src: '/img/square-img/square-bridal.png', alt: 'bridal hair updo' },
+  { src: '/img/square-img/square-3.png', alt: 'curly platinum blonde bob back view' },
   { src: '/img/square-img/square-4.png', alt: 'bronde hair style' },
 ]
 
@@ -24,7 +26,7 @@ export function SampleWork() {
             Full gallery <span aria-hidden>→</span>
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img) => (
             <FadeInImage
               key={img.src}
