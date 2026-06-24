@@ -48,7 +48,7 @@ export function WhoWeAre() {
               href="/contact"
               className="inline-flex items-center gap-2 text-brand-dark font-medium text-sm hover:gap-3 transition-all"
             >
-              Our Story <span aria-hidden>→</span>
+              Get in touch <span aria-hidden>→</span>
             </Link>
           </div>
 

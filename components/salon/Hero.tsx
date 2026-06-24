@@ -8,7 +8,7 @@ export function Hero() {
       {/* Left — text content on grey + pink corner gradient */}
       <div
         className="flex flex-col justify-center px-10 lg:px-20 py-20"
-        style={{ background: 'radial-gradient(ellipse at 0% 110%, #f3b0e6 0%, #e6e6e6 55%)' }}
+        style={{ background: 'var(--gradient-hero-left)' }}
       >
         <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-8">
           Modern Hair Studio
@@ -31,7 +31,7 @@ export function Hero() {
         <div className="flex flex-wrap gap-4 mb-10">
           <a
             href="tel:+447805287950"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-dark"
           >
             Book an Appointment <span aria-hidden>→</span>
           </a>

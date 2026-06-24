@@ -55,12 +55,12 @@ export function Header() {
         </nav>
 
         {/* Book Now CTA — desktop */}
-        <Link
+        <a
           href="tel:+447805287950"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-brand-dark text-white text-sm tracking-wide hover:bg-brand-rose hover:text-brand-dark transition-colors"
         >
           Book Now
-        </Link>
+        </a>
 
         {/* Mobile hamburger */}
         <Sheet>
@@ -91,12 +91,12 @@ export function Header() {
                   )
                 })}
                 <li className="pt-4">
-                  <Link
+                  <a
                     href="tel:+447805287950"
                     className="inline-flex items-center px-6 py-3 rounded-full bg-brand-dark text-white text-sm tracking-wide"
                   >
                     Book Now
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </nav>

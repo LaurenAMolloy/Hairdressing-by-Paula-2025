@@ -143,7 +143,7 @@ export default function ServicesPage() {
       {/* Bottom CTA */}
       <section
         className="py-24 text-center"
-        style={{ background: 'radial-gradient(ellipse at 50% 120%, #f3b0e6 0%, #FAF8F5 65%)' }}
+        style={{ background: 'var(--gradient-cta)' }}
       >
         <div className="w-[90%] max-w-275 mx-auto">
           <h2 className="font-playfair text-3xl md:text-5xl text-brand-dark mb-8 leading-tight">
@@ -151,7 +151,7 @@ export default function ServicesPage() {
           </h2>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-dark"
           >
             Get in touch <span aria-hidden>→</span>
           </Link>

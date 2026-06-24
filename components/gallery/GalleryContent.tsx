@@ -37,6 +37,7 @@ export function GalleryContent({ pairs, images }: Props) {
             <button
               key={value}
               onClick={() => setFilter(value)}
+              aria-pressed={filter === value}
               className={cn(
                 'px-5 py-2 rounded-full text-sm font-medium transition-colors border',
                 filter === value

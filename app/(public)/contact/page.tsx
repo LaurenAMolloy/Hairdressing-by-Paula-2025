@@ -2,7 +2,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-brand-bg py-20 border-b border-brand-dark/10">
+      <section className="bg-brand-cream py-20 border-b border-brand-dark/10">
         <div className="w-[90%] mx-auto max-w-275">
           <p className="text-xs tracking-[0.25em] uppercase text-brand-dark/50 mb-4">Get in touch</p>
           <h1 className="font-playfair font-bold text-5xl lg:text-6xl leading-tight text-brand-dark mb-6 max-w-lg">
@@ -13,7 +13,7 @@ export default function ContactPage() {
           </p>
           <a
             href="tel:+447805287950"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-primary text-white text-sm font-medium hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-dark"
           >
             Call to Book <span aria-hidden="true">→</span>
           </a>

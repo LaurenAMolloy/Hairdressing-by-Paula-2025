@@ -14,7 +14,7 @@ const HEIGHTS = [
   'h-56', 'h-72', 'h-48', 'h-80',
   'h-64', 'h-44', 'h-72', 'h-56',
   'h-80', 'h-52', 'h-64', 'h-48',
-  'h-68', 'h-76', 'h-52', 'h-60',
+  'h-[17rem]', 'h-[19rem]', 'h-52', 'h-60',
 ]
 
 export function FreshestHair({ images }: Props) {
@@ -27,7 +27,7 @@ export function FreshestHair({ images }: Props) {
         <h2 className="font-playfair text-3xl md:text-4xl text-brand-dark text-center mb-12">
           Freshest Hair
         </h2>
-        <div className="columns-1 md:columns-3 lg:columns-4 gap-4">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
           {images.map((image, i) => (
             <div
               key={i}

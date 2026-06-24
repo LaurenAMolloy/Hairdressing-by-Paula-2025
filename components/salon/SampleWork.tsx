@@ -3,8 +3,8 @@ import { FadeInImage } from '@/components/salon/FadeInImage'
 
 const images = [
   { src: '/img/square-img/square-1.png', alt: 'brunette curly hair' },
-  { src: '/img/square-img/square-red-bob.png', alt: 'short white hair' },
-  { src: '/img/square-img/square-bridal.png', alt: 'blonde hair style' },
+  { src: '/img/square-img/square-red-bob.png', alt: 'short red bob haircut' },
+  { src: '/img/square-img/square-bridal.png', alt: 'bridal hair updo' },
   { src: '/img/square-img/square-4.png', alt: 'bronde hair style' },
 ]
 

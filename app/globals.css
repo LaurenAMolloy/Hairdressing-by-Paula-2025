@@ -12,6 +12,9 @@
   --color-brand-dark: #1C1C1C;
   --color-brand-rose: #e318b7;
   --color-brand-rose-light: #fdeef8;
+  --color-brand-rose-glow: #f3b0e6;
+  --gradient-hero-left: radial-gradient(ellipse at 0% 110%, #f3b0e6 0%, #e6e6e6 55%);
+  --gradient-cta: radial-gradient(ellipse at 50% 120%, #f3b0e6 0%, #FAF8F5 65%);
   --color-brand-cream: #FAF8F5;
 
   --font-dancing: var(--font-dancing-script);

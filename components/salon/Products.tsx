@@ -22,7 +22,7 @@ export function Products() {
               ))}
             </ul>
           </div>
-          <figure className="shrink-0">
+          <figure className="shrink-0 text-center">
             <Image
               src="/img/products/muk-social.png"
               alt="muk shampoo logo"
@@ -30,6 +30,7 @@ export function Products() {
               height={240}
               className="rounded-xl w-60 h-auto"
             />
+            <figcaption className="text-xs text-brand-dark/50 mt-2">Muk Haircare</figcaption>
           </figure>
         </div>
       </div>

@@ -51,37 +51,36 @@ export function Services() {
           <h2 className="text-brand-dark text-3xl md:text-5xl font-playfair">Popular Services</h2>
           <Link
             href="/services"
-            className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-primary hover:opacity-75 transition-opacity font-medium"
+            className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-dark hover:opacity-75 transition-opacity font-medium"
           >
             View all services <span aria-hidden>→</span>
           </Link>
         </div>
 
         {/* 3 full-image cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16 items-stretch">
           {services.map((service) => (
             <article
               key={service.title}
-              className="group relative rounded-3xl overflow-hidden h-115"
+              className="group rounded-3xl overflow-hidden flex flex-col h-full"
             >
-              {/* Background image */}
-              <Image
-                src={service.src}
-                alt={service.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {/* Image — aspect-ratio box so image is fully visible, no overlap */}
+              <div className="relative aspect-4/5 overflow-hidden">
+                <Image
+                  src={service.src}
+                  alt={service.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-              {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent" />
-
-              {/* Text at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="font-playfair font-semibold text-brand-primary text-2xl leading-tight mb-3">
+              {/* Text panel — flows below the image, never overlaps */}
+              <div className="p-8 bg-[#e6e6e6] border-t-4 border-brand-rose flex-1">
+                <h3 className="font-playfair font-semibold text-brand-dark text-2xl leading-tight mb-3">
                   {service.title}
                 </h3>
-                <p className="text-white/85 text-sm leading-relaxed">{service.description}</p>
+                <p className="text-brand-dark/70 text-sm leading-relaxed">{service.description}</p>
               </div>
             </article>
           ))}
@@ -96,7 +95,7 @@ export function Services() {
             {otherServices.map((s) => (
               <li
                 key={s}
-                className="px-4 py-2 rounded-full border border-brand-dark/15 text-sm text-brand-dark/70 hover:border-brand-primary hover:text-brand-primary transition-colors"
+                className="px-4 py-2 rounded-full border border-brand-dark/15 text-sm text-brand-dark/70 hover:border-brand-primary hover:text-brand-dark transition-colors"
               >
                 {s}
               </li>
@@ -106,7 +105,7 @@ export function Services() {
 
         {/* Mobile "view all" link */}
         <div className="sm:hidden mt-8 text-center">
-          <Link href="/services" className="text-sm text-brand-primary font-medium">
+          <Link href="/services" className="text-sm text-brand-dark font-medium">
             View all services →
           </Link>
         </div>

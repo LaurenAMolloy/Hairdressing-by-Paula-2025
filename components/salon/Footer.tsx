@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/30">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60">
           <p>&copy; {new Date().getFullYear()} Hairdressing by Paula Lorraine</p>
           <p>
             Made with ❤ by{' '}
