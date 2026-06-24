@@ -26,15 +26,15 @@ export function SampleWork() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((img) => (
-            <div key={img.src} className="rounded-xl overflow-hidden aspect-square">
-              <FadeInImage
-                src={img.src}
-                alt={img.alt}
-                width={400}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <FadeInImage
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              width={400}
+              height={400}
+              className="w-full h-full object-cover"
+              wrapperClassName="rounded-xl overflow-hidden aspect-square"
+            />
           ))}
         </div>
       </div>
