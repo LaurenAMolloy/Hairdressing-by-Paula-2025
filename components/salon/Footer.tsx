@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { MapPin, Phone, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -30,17 +31,17 @@ export function Footer() {
             <h4 className="text-xs tracking-[0.2em] uppercase text-brand-rose mb-5 font-sans">Visit</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 text-white/80">📍</span>
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-white/80" />
                 <address className="not-italic">B5106, Trefriw LL27 0JG</address>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/80">📞</span>
+                <Phone className="w-4 h-4 shrink-0 text-white/80" />
                 <a href="tel:+447805287950" className="text-white/70 hover:text-white transition-colors">
                   07805 287950
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/80">✉</span>
+                <Mail className="w-4 h-4 shrink-0 text-white/80" />
                 <a href="mailto:paulafinchhair@aol.com" className="text-white/70 hover:text-white transition-colors">
                   paulafinchhair@aol.com
                 </a>
