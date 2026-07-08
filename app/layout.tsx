@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Inter, Pacifico, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -42,7 +43,17 @@ export default function RootLayout({
       lang="en"
       className={cn(dancingScript.variable, inter.variable, pacifico.variable, playfair.variable, "font-sans")}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://embeds.iubenda.com/widgets/ca6360c0-2d07-4c6e-965a-5314cd04feb4.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://cdn.iubenda.com/iubenda.js"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }

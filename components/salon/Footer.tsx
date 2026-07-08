@@ -80,14 +80,16 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href="https://www.iubenda.com/privacy-policy/81426361"
-              className="hover:text-white/50 transition-colors"
+              href="https://www.iubenda.com/privacy-policy/43216588"
+              className="iubenda-white iubenda-noiframe iubenda-embed hover:text-white/50 transition-colors"
+              title="Privacy Policy"
             >
               Privacy Policy
             </a>
             <a
-              href="https://www.iubenda.com/privacy-policy/81426361/cookie-policy"
-              className="hover:text-white/50 transition-colors"
+              href="https://www.iubenda.com/privacy-policy/43216588/cookie-policy"
+              className="iubenda-white iubenda-noiframe iubenda-embed hover:text-white/50 transition-colors"
+              title="Cookie Policy"
             >
               Cookie Policy
             </a>
