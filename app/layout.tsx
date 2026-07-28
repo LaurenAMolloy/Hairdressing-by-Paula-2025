@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Inter, Pacifico, Playfair_Display } from "next/font/google";
+import { Dancing_Script, Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -11,20 +11,15 @@ const inter = Inter({
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
   variable: "--font-dancing-script",
+  preload: false,
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-playfair",
-});
-
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-pacifico",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(dancingScript.variable, inter.variable, pacifico.variable, playfair.variable, "font-sans")}
+      className={cn(dancingScript.variable, inter.variable, playfair.variable, "font-sans")}
     >
       <body>
         {children}
