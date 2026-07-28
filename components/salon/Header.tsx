@@ -24,8 +24,9 @@ export function Header() {
           <Image
             src="/img/logo/paula-lorraine-pink.png"
             alt="Paula Lorraine Hairdressing"
-            width={2000}
-            height={1090}
+            width={800}
+            height={436}
+            sizes="(min-width: 768px) 176px, 144px"
             className="w-full h-auto"
             priority
           />
